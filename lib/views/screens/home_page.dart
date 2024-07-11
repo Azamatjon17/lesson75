@@ -60,6 +60,11 @@ class _HomePageState extends State<HomePage> {
             ),
           );
           selectedPoint = newPoint;
+          LocationServcice.getDirection(currentPoint, selectedPoint!).then((points) {
+            routePointes = points;
+            print(routePointes!.length);
+            setState(() {});
+          });
           setState(() {});
         }
       } catch (e) {
